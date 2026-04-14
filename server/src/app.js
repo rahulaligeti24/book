@@ -9,12 +9,12 @@ import { errorHandler, notFound } from './middleware/errorMiddleware.js';
 
 export const createApp = () => {
   const app = express();
-
-  app.use(
-    cors({
-      origin: process.env.CLIENT_URL || 'https://book-two-livid.vercel.app/'
-    })
-  );
+app.use(
+  cors({
+    origin: "https://book-two-livid.vercel.app",
+    credentials: true
+  })
+);
   app.use(express.json());
   app.use(morgan('dev'));
 
